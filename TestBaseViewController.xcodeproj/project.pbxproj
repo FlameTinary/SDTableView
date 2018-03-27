@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9DB624DD2068D68A007E7314 /* ExampleView */,
-				9DB624DC2068D638007E7314 /* customTabelView */,
+				9DB624DC2068D638007E7314 /* TYTabelView */,
 				9DB624AE20688F80007E7314 /* AppDelegate.h */,
 				9DB624AF20688F80007E7314 /* AppDelegate.m */,
 				9DB624B420688F80007E7314 /* Main.storyboard */,
@@ -150,7 +150,7 @@
 			path = TestBaseViewController;
 			sourceTree = "<group>";
 		};
-		9DB624DC2068D638007E7314 /* customTabelView */ = {
+		9DB624DC2068D638007E7314 /* TYTabelView */ = {
 			isa = PBXGroup;
 			children = (
 				9DB624CA20689A3E007E7314 /* UITableView+TY_TableView.h */,
@@ -168,7 +168,7 @@
 				9D9312DB206A3B4C00A3877B /* TY_TableViewConfig.h */,
 				9D9312DC206A3B4C00A3877B /* TY_TableViewConfig.m */,
 			);
-			path = customTabelView;
+			path = TYTabelView;
 			sourceTree = "<group>";
 		};
 		9DB624DD2068D68A007E7314 /* ExampleView */ = {

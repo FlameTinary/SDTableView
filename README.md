@@ -60,3 +60,4 @@
 - (void)ty_cellDidSelectedWithIndexPath:(NSIndexPath *)indexPath;
 ```
 
+
