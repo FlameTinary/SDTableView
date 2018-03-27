@@ -18,6 +18,11 @@
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
+        
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapEvent:)];
+        [self addGestureRecognizer:tap];
+        
+        
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 200, 20)];
         [self.contentView addSubview:titleLabel];
         self.titleLabel = titleLabel;
@@ -28,6 +33,13 @@
 - (void)setupData:(id)data
 {
     self.titleLabel.text = [NSString stringWithFormat:@"header:%@",(NSString *)data];
+}
+
+- (void)tapEvent:(UITapGestureRecognizer *) tapRecognizer
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewHeaderFooterView:event:)]) {
+        [self.delegate tableViewHeaderFooterView:self event:tapRecognizer];
+    }
 }
 
 @end

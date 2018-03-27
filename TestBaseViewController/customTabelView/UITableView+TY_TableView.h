@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TY_HeaderFooterView.h"
+
 
 @class TY_TableViewSection;
 
@@ -15,6 +17,9 @@
 #pragma mark - 相关属性
 //控制器
 @property (nonatomic, weak) UIViewController * ty_viewController;
+
+//header代理
+@property (nonatomic, weak) id<TYHeaderFooterViewDelegate> ty_headerFooterViewDelegate;
 
 #pragma mark - 类方法
 + (instancetype)TY_tableViewWithFrame:(CGRect)frame style:(UITableViewStyle)style;

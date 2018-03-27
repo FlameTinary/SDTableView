@@ -16,7 +16,7 @@
 #import "TY_ExampleHeaderView.h"
 #import "TY_ExampleFooterView.h"
 
-@interface TY_ExampleViewController ()
+@interface TY_ExampleViewController ()<TYHeaderFooterViewDelegate>
 //item数组
 @property (nonatomic, strong) NSArray *itemArr;
 @end
@@ -51,35 +51,50 @@
 - (void)configTableView:(UITableView *)tableView
 {
     tableView.rowHeight = 55;
+    
+    tableView.ty_headerFooterViewDelegate = self;
+    
     // 注册cell
     [tableView ty_registerCellClass:[TY_ExampleOneCell class]];
     [tableView ty_registerCellClass:[TY_ExampleTwoCell class]];
     
+    //注册header和footer
     [tableView ty_registerHeaderFooterClass:[TY_ExampleHeaderView class]];
     [tableView ty_registerHeaderFooterClass:[TY_ExampleFooterView class]];
 }
 
 - (void)setupExampleContent
 {
-    // 添加section0
-    TY_TableViewSection * section0 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleOneCell class] headerClass:[TY_ExampleHeaderView class]];
-    section0.headerHeight = 44;
+    // 添加section0(不带header和footer)
+    TY_TableViewSection * section0 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleOneCell class]];
     [self.tableView ty_addSection:section0];
     [self.tableView ty_addItems:self.itemArr atSection:0];
     
-    // 添加section1
+    // 添加section1(带header)
     TY_TableViewSection * section1 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleTwoCell class] headerClass:[TY_ExampleHeaderView class]];
     section1.headerHeight = 44;
     [self.tableView ty_addSection:section1];
     [self.tableView ty_addItems:self.itemArr atSection:1];
     
-    // 添加section2
-    TY_TableViewSection * section2 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleTwoCell class] headerClass:[TY_ExampleHeaderView class] footerClass:[TY_ExampleFooterView class]];
-    section2.headerHeight = 44;
+    // 添加section(带footer)
+    TY_TableViewSection * section2 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleTwoCell class] footerClass:[TY_ExampleFooterView class]];
     section2.footerHeight = 66;
     [self.tableView ty_addSection:section2];
     [self.tableView ty_addItems:self.itemArr atSection:2];
+    
+    // 添加section(带footer和header)
+    TY_TableViewSection * section3 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleTwoCell class] headerClass:[TY_ExampleHeaderView class] footerClass:[TY_ExampleFooterView class]];
+    section3.headerHeight = 44;
+    section3.footerHeight = 66;
+    [self.tableView ty_addSection:section3];
+    [self.tableView ty_addItems:self.itemArr atSection:3];
 
+}
+
+#pragma mark - TYHeaderFooterViewDelegate
+- (void)tableViewHeaderFooterView:(UITableViewHeaderFooterView *)headerFooterView event:(id)event
+{
+    NSLog(@"点击了headerView");
 }
 
 #pragma mark - UITableViewDelegate

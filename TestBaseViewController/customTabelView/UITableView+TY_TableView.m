@@ -12,9 +12,9 @@
 #import "TY_TableViewCell.h"
 #import "TY_HeaderFooterView.h"
 #import "TY_TableViewSection.h"
+#import "TY_TableViewConfig.h"
 
-static char kSTDTableViewDataSourceIdentifyKey;
-static char kSTDTableViewControllerKey;
+static char kTYTableViewDataSourceIdentifyKey;
 
 @interface UITableView()
 //dataSoutce
@@ -25,24 +25,32 @@ static char kSTDTableViewControllerKey;
 @implementation UITableView (TY_TableView)
 
 #pragma mark - setter 和 getter
+- (void)setTy_headerFooterViewDelegate:(id<TYHeaderFooterViewDelegate>)ty_headerFooterViewDelegate
+{
+    [TY_TableViewConfig sharedConfig].headerFooterViewDelegate = ty_headerFooterViewDelegate;
+}
+- (id<TYHeaderFooterViewDelegate>)ty_headerFooterViewDelegate
+{
+    return [TY_TableViewConfig sharedConfig].headerFooterViewDelegate;
+}
 - (void)setTy_viewController:(UIViewController *)ty_viewController
 {
-    objc_setAssociatedObject(self, &kSTDTableViewControllerKey, ty_viewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [TY_TableViewConfig sharedConfig].viewController = ty_viewController;
 }
 - (UIViewController *)ty_viewController
 {
-    return objc_getAssociatedObject(self, &kSTDTableViewControllerKey);
+    return [TY_TableViewConfig sharedConfig].viewController;
 }
 
 - (void)setTy_dataSource:(TY_DataSourcce *)ty_dataSource
 {
-    objc_setAssociatedObject(self, &kSTDTableViewDataSourceIdentifyKey, ty_dataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kTYTableViewDataSourceIdentifyKey, ty_dataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.dataSource = ty_dataSource;
 }
 
 - (TY_DataSourcce *)ty_dataSource
 {
-    return objc_getAssociatedObject(self, &kSTDTableViewDataSourceIdentifyKey);
+    return objc_getAssociatedObject(self, &kTYTableViewDataSourceIdentifyKey);
 }
 
 #pragma mark - 类方法
@@ -86,6 +94,7 @@ static char kSTDTableViewControllerKey;
     NSArray *sectionArr = self.ty_dataSource.sections.copy;
     TY_TableViewSection * tempSec = sectionArr[section];
     TY_HeaderFooterView *headerView = [self dequeueReusableHeaderFooterViewWithIdentifier:tempSec.sectionHeaderIdentifier];
+    headerView.delegate = self.ty_headerFooterViewDelegate;
     [headerView setupData:[NSString stringWithFormat:@"第%ld组", section]];
     return headerView;
 }
