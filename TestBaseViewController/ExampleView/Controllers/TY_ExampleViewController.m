@@ -101,25 +101,25 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [self.tableView ty_viewForHeaderInSection:section];
+    return [tableView ty_viewForHeaderInSection:section];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return [self.tableView ty_heightForHeaderInSection:section];
+    return [tableView ty_heightForHeaderInSection:section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return [self.tableView ty_viewForFooterInSection:section];
+    return [tableView ty_viewForFooterInSection:section];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return [self.tableView ty_heightForFooterInSection:section];
+    return [tableView ty_heightForFooterInSection:section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView ty_cellDidSelectedWithIndexPath:indexPath];
+    [tableView ty_cellDidSelectedWithIndexPath:indexPath];
 }
 
 @end
