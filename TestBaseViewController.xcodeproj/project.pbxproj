@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D9312BB2069F5C300A3877B /* TY_SecExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312BA2069F5C300A3877B /* TY_SecExampleViewController.m */; };
 		9DB624B020688F80007E7314 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624AF20688F80007E7314 /* AppDelegate.m */; };
 		9DB624B620688F80007E7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB624B420688F80007E7314 /* Main.storyboard */; };
 		9DB624B820688F80007E7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB624B720688F80007E7314 /* Assets.xcassets */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D9312B92069F5C300A3877B /* TY_SecExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_SecExampleViewController.h; sourceTree = "<group>"; };
+		9D9312BA2069F5C300A3877B /* TY_SecExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_SecExampleViewController.m; sourceTree = "<group>"; };
 		9DB624AB20688F80007E7314 /* TestBaseViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBaseViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB624AE20688F80007E7314 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9DB624AF20688F80007E7314 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 			children = (
 				9DB624C42068907C007E7314 /* TY_ExampleViewController.h */,
 				9DB624C52068907C007E7314 /* TY_ExampleViewController.m */,
+				9D9312B92069F5C300A3877B /* TY_SecExampleViewController.h */,
+				9D9312BA2069F5C300A3877B /* TY_SecExampleViewController.m */,
 				9DB624C7206890DA007E7314 /* TY_BaseViewController.h */,
 				9DB624C8206890DA007E7314 /* TY_BaseViewController.m */,
 				9DB624D62068D41C007E7314 /* TY_ExampleOneCell.h */,
@@ -204,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9312BB2069F5C300A3877B /* TY_SecExampleViewController.m in Sources */,
 				9DB624C62068907C007E7314 /* TY_ExampleViewController.m in Sources */,
 				9DB624D82068D41C007E7314 /* TY_ExampleOneCell.m in Sources */,
 				9DB624CF20689D62007E7314 /* TY_DataSourcce.m in Sources */,

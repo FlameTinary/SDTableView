@@ -10,6 +10,13 @@
 
 @interface TY_TableViewCell : UITableViewCell
 
+#pragma mark - 相关属性
+//控制器
+@property (nonatomic, weak) UIViewController * viewController;
+
+#pragma mark - 设置数据
 - (void)setupData:(id)data;
+
+#pragma mark - 设置数据
 - (void)selectedEvent;
 @end

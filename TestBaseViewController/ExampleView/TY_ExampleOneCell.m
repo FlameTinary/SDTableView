@@ -7,7 +7,12 @@
 //
 
 #import "TY_ExampleOneCell.h"
+
+#import "TY_ExampleListItem.h"
+
 @interface TY_ExampleOneCell()
+//data
+@property (nonatomic, strong) TY_ExampleListItem * item;
 //label
 @property (nonatomic, strong) UILabel * titleLabel;
 @end
@@ -28,9 +33,11 @@
 
 - (void)setupData:(id)data
 {
-    self.titleLabel.text = (NSString *)data;
+    _item = data;
+    self.titleLabel.text = _item.title;
 }
 - (void)selectedEvent {
-    NSLog(@"点击了TY_ExampleOneCell");
+    Class class = _item.object;
+    [self.viewController.navigationController pushViewController:[class new] animated:YES];
 }
 @end

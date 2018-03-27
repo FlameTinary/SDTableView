@@ -25,7 +25,7 @@
 - (void)setupTableView{
     _tableView = [UITableView TY_tableViewWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.delegate = self;
-    //_tableView.ty_viewController = self;
+    _tableView.ty_viewController = self;
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self configTableView:_tableView];
     [self.view addSubview:_tableView];

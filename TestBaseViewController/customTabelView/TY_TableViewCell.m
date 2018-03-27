@@ -8,8 +8,6 @@
 
 #import "TY_TableViewCell.h"
 
-
-
 @implementation TY_TableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -20,10 +18,13 @@
     return self;
 }
 
+#pragma mark - 设置数据
 - (void)setupData:(id)data
 {
     
 }
+
+#pragma mark - 点击响应
 - (void)selectedEvent
 {
     

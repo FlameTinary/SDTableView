@@ -10,11 +10,13 @@
 
 @interface TY_TableViewItem : NSObject
 
+#pragma mark - 相关属性
 //cellID
 @property (nonatomic, copy) NSString * cellReuseIdentifier;
 //data
 @property (nonatomic, strong) id data;
 
+#pragma mark - 类方法
 + (instancetype)itemWithReuseIdentifier:(NSString *)cellReuseIdentifier andData:(id)data;
 
 @end

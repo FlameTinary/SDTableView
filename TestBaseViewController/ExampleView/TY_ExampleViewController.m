@@ -11,6 +11,7 @@
 #import "TY_ExampleTwoCell.h"
 #import "TY_TableViewSection.h"
 #import "TY_ExampleListItem.h"
+#import "TY_SecExampleViewController.h"
 
 @interface TY_ExampleViewController ()
 //item数组
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"首页";
     [self setupTableView];
     
     //请求网络
@@ -34,21 +35,10 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         //模拟数据
-        //第一组
-        TY_TableViewItem * item1 = [TY_TableViewItem itemWithReuseIdentifier:@"TY_ExampleOneCell" andData:[NSString stringWithFormat:@"第一组的item1"]];
-        TY_TableViewItem * item2 = [TY_TableViewItem itemWithReuseIdentifier:@"TY_ExampleTwoCell" andData:[NSString stringWithFormat:@"第一组的item2"]];
-        
-        TY_TableViewSection * section1 = [TY_TableViewSection sectionWithTitle:@"第一组" andDataArr:[NSArray arrayWithObjects:item1, item2, nil]];
-        
-        //第二组
-        TY_TableViewItem * item3 = [TY_TableViewItem itemWithReuseIdentifier:@"TY_ExampleOneCell" andData:[NSString stringWithFormat:@"第二组的item1"]];
-        TY_TableViewItem * item4 = [TY_TableViewItem itemWithReuseIdentifier:@"TY_ExampleTwoCell" andData:[NSString stringWithFormat:@"第二组的item2"]];
-        
-        TY_TableViewSection * section2 = [TY_TableViewSection sectionWithTitle:@"第二组" andDataArr:[NSArray arrayWithObjects:item3, item4, nil]];
-        
-        //给itemArr赋值
-        _itemArr = [NSArray arrayWithObjects:section1, section2, nil];
-        
+        NSArray *itemList = @[[TY_ExampleListItem itemWithTitle:@"1. 头部点击缩放" subTitle:nil object:[TY_SecExampleViewController class]],
+                              [TY_ExampleListItem itemWithTitle:@"2. Cell事件响应" subTitle:nil object:[TY_SecExampleViewController class]],
+                              [TY_ExampleListItem itemWithTitle:@"3. 混合Cell" subTitle:nil object:[TY_SecExampleViewController class]]];
+        _itemArr = itemList;
         //更新tableView
         [self setupExampleContent];
         
@@ -58,24 +48,24 @@
 - (void)configTableView:(UITableView *)tableView
 {
     tableView.rowHeight = 55;
+    
+    // 注册cell
     [tableView ty_registerCellClass:[TY_ExampleOneCell class]];
-    [tableView ty_registerCellClass:[TY_ExampleTwoCell class]];
+    
+    // 添加一个section
+    TY_TableViewSection * section = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleOneCell class]];
+    [tableView ty_addSection:section];
+    
 }
 
 - (void)setupExampleContent
 {
-    //NSArray *itemList = @[[TY_ExampleListItem itemWithTitle:@"1. 头部点击缩放" subTitle:nil object:nil],
-      //                    [TY_ExampleListItem itemWithTitle:@"2. Cell事件响应" subTitle:nil object:nil],
-        //                  [TY_ExampleListItem itemWithTitle:@"3. 混合Cell" subTitle:nil object:nil]];
-    //_itemArr = itemList;
-    [self.tableView cellWith:self.itemArr];
-    //[self.tableView ty_addItems:itemList atSection:0];
+    [self.tableView ty_addItems:self.itemArr atSection:0];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //NSLog(@"点击了第%ld组，第%ld行", (long)indexPath.section, (long)indexPath.row);
     [self.tableView ty_cellDidSelectedWithIndexPath:indexPath];
 }
 

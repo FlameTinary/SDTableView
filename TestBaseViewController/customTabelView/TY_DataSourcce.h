@@ -13,9 +13,8 @@
 
 @interface TY_DataSourcce : NSObject<UITableViewDataSource>
 
-//cell数组
-@property (nonatomic, strong) NSArray<TY_TableViewSection *> * cellArr;
-
+#pragma mark - section 和 item 相关
+- (void)addSection:(TY_TableViewSection *)section;
 - (void)addItems:(NSArray *)items atSection:(NSInteger)section;
 
 @end

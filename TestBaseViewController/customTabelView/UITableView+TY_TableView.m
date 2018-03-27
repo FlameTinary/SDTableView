@@ -12,6 +12,7 @@
 #import "TY_TableViewCell.h"
 
 static char kSTDTableViewDataSourceIdentifyKey;
+static char kSTDTableViewControllerKey;
 
 @interface UITableView()
 //dataSoutce
@@ -20,6 +21,17 @@ static char kSTDTableViewDataSourceIdentifyKey;
 @end
 
 @implementation UITableView (TY_TableView)
+
+#pragma mark - setter 和 getter
+- (void)setTy_viewController:(UIViewController *)ty_viewController
+{
+    objc_setAssociatedObject(self, &kSTDTableViewControllerKey, ty_viewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (UIViewController *)ty_viewController
+{
+    return objc_getAssociatedObject(self, &kSTDTableViewControllerKey);
+}
+
 - (void)setTy_dataSource:(TY_DataSourcce *)ty_dataSource
 {
     objc_setAssociatedObject(self, &kSTDTableViewDataSourceIdentifyKey, ty_dataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -31,6 +43,7 @@ static char kSTDTableViewDataSourceIdentifyKey;
     return objc_getAssociatedObject(self, &kSTDTableViewDataSourceIdentifyKey);
 }
 
+#pragma mark - 类方法
 + (instancetype)TY_tableViewWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
@@ -38,28 +51,33 @@ static char kSTDTableViewDataSourceIdentifyKey;
     return tableView;
 }
 
-#pragma mark - register
+
+
+#pragma mark - 注册cell
 - (void)ty_registerCellClass:(Class)cellClass
 {
     [self registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
 
-#pragma mark - 获取cellArr
-- (void)cellWith:(NSArray<TY_TableViewSection *> *)cellArr
+#pragma mark - section 和 item 相关
+- (void)ty_addSection:(TY_TableViewSection *)section
 {
-    self.ty_dataSource.cellArr = cellArr;
+    [self.ty_dataSource addSection:section];
     [self reloadData];
 }
 
 - (void)ty_addItems:(NSArray *)items atSection:(NSInteger)section
 {
     [self.ty_dataSource addItems:items atSection:section];
+    [self reloadData];
 }
 
-#pragma mark - selected
+#pragma mark - 点击响应
 - (void)ty_cellDidSelectedWithIndexPath:(NSIndexPath *)indexPath
 {
-    [(TY_TableViewCell *)[self cellForRowAtIndexPath:indexPath] selectedEvent];
+    TY_TableViewCell * cell = (TY_TableViewCell *)[self cellForRowAtIndexPath:indexPath];
+    cell.viewController = self.ty_viewController;
+    [cell selectedEvent];
 }
 
 #pragma mark - dataSource
