@@ -7,6 +7,9 @@
 //
 
 #import "TY_ExampleTwoCell.h"
+
+#import "TY_ExampleListItem.h"
+
 @interface TY_ExampleTwoCell()
 //label
 @property (nonatomic, strong) UILabel * titleLabel;
@@ -32,7 +35,9 @@
 
 - (void)setupData:(id)data
 {
-    self.titleLabel.text = (NSString *)data;
+    TY_ExampleListItem * item = (TY_ExampleListItem *)data;
+    self.titleLabel.text = item.title;
+    
 }
 - (void)selectedEvent {
     NSLog(@"点击了TY_ExampleTwoCell");

@@ -11,8 +11,7 @@
 #import "TY_TableViewSection.h"
 
 @interface TY_DataSourcce()
-//section
-@property (nonatomic, strong) NSMutableArray<TY_TableViewSection *> *sections;
+
 @end
 
 @implementation TY_DataSourcce

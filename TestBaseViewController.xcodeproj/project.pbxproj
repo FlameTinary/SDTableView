@@ -7,27 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D9312BB2069F5C300A3877B /* TY_SecExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312BA2069F5C300A3877B /* TY_SecExampleViewController.m */; };
+		9D9312CC206A21DE00A3877B /* TY_ExampleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312BF206A21DD00A3877B /* TY_ExampleOneCell.m */; };
+		9D9312CD206A21DE00A3877B /* TY_ExampleTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312C1206A21DD00A3877B /* TY_ExampleTwoCell.m */; };
+		9D9312CE206A21DE00A3877B /* TY_ExampleListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312C4206A21DD00A3877B /* TY_ExampleListItem.m */; };
+		9D9312CF206A21DE00A3877B /* TY_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312C7206A21DE00A3877B /* TY_BaseViewController.m */; };
+		9D9312D0206A21DE00A3877B /* TY_ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312C9206A21DE00A3877B /* TY_ExampleViewController.m */; };
+		9D9312D1206A21DE00A3877B /* TY_SecExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312CB206A21DE00A3877B /* TY_SecExampleViewController.m */; };
+		9D9312D4206A222800A3877B /* TY_HeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312D3206A222800A3877B /* TY_HeaderFooterView.m */; };
+		9D9312D7206A26D100A3877B /* TY_ExampleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312D6206A26D100A3877B /* TY_ExampleHeaderView.m */; };
+		9D9312DA206A303300A3877B /* TY_ExampleFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9312D9206A303300A3877B /* TY_ExampleFooterView.m */; };
 		9DB624B020688F80007E7314 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624AF20688F80007E7314 /* AppDelegate.m */; };
 		9DB624B620688F80007E7314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB624B420688F80007E7314 /* Main.storyboard */; };
 		9DB624B820688F80007E7314 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB624B720688F80007E7314 /* Assets.xcassets */; };
 		9DB624BB20688F80007E7314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB624B920688F80007E7314 /* LaunchScreen.storyboard */; };
 		9DB624BE20688F80007E7314 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624BD20688F80007E7314 /* main.m */; };
-		9DB624C62068907C007E7314 /* TY_ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624C52068907C007E7314 /* TY_ExampleViewController.m */; };
-		9DB624C9206890DA007E7314 /* TY_BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624C8206890DA007E7314 /* TY_BaseViewController.m */; };
 		9DB624CC20689A3E007E7314 /* UITableView+TY_TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624CB20689A3E007E7314 /* UITableView+TY_TableView.m */; };
 		9DB624CF20689D62007E7314 /* TY_DataSourcce.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624CE20689D62007E7314 /* TY_DataSourcce.m */; };
 		9DB624D22068AA9B007E7314 /* TY_TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624D12068AA9B007E7314 /* TY_TableViewCell.m */; };
 		9DB624D52068C937007E7314 /* TY_TableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624D42068C937007E7314 /* TY_TableViewItem.m */; };
-		9DB624D82068D41C007E7314 /* TY_ExampleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624D72068D41C007E7314 /* TY_ExampleOneCell.m */; };
-		9DB624DB2068D430007E7314 /* TY_ExampleTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624DA2068D430007E7314 /* TY_ExampleTwoCell.m */; };
 		9DB624E02068D76E007E7314 /* TY_TableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624DF2068D76E007E7314 /* TY_TableViewSection.m */; };
-		9DB624E32068E468007E7314 /* TY_ExampleListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB624E22068E468007E7314 /* TY_ExampleListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D9312B92069F5C300A3877B /* TY_SecExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_SecExampleViewController.h; sourceTree = "<group>"; };
-		9D9312BA2069F5C300A3877B /* TY_SecExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_SecExampleViewController.m; sourceTree = "<group>"; };
+		9D9312BE206A21DD00A3877B /* TY_ExampleOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_ExampleOneCell.h; sourceTree = "<group>"; };
+		9D9312BF206A21DD00A3877B /* TY_ExampleOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleOneCell.m; sourceTree = "<group>"; };
+		9D9312C0206A21DD00A3877B /* TY_ExampleTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_ExampleTwoCell.h; sourceTree = "<group>"; };
+		9D9312C1206A21DD00A3877B /* TY_ExampleTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleTwoCell.m; sourceTree = "<group>"; };
+		9D9312C3206A21DD00A3877B /* TY_ExampleListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_ExampleListItem.h; sourceTree = "<group>"; };
+		9D9312C4206A21DD00A3877B /* TY_ExampleListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleListItem.m; sourceTree = "<group>"; };
+		9D9312C6206A21DE00A3877B /* TY_BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_BaseViewController.h; sourceTree = "<group>"; };
+		9D9312C7206A21DE00A3877B /* TY_BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TY_BaseViewController.m; sourceTree = "<group>"; };
+		9D9312C8206A21DE00A3877B /* TY_ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_ExampleViewController.h; sourceTree = "<group>"; };
+		9D9312C9206A21DE00A3877B /* TY_ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleViewController.m; sourceTree = "<group>"; };
+		9D9312CA206A21DE00A3877B /* TY_SecExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_SecExampleViewController.h; sourceTree = "<group>"; };
+		9D9312CB206A21DE00A3877B /* TY_SecExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TY_SecExampleViewController.m; sourceTree = "<group>"; };
+		9D9312D2206A222800A3877B /* TY_HeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_HeaderFooterView.h; sourceTree = "<group>"; };
+		9D9312D3206A222800A3877B /* TY_HeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_HeaderFooterView.m; sourceTree = "<group>"; };
+		9D9312D5206A26D100A3877B /* TY_ExampleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_ExampleHeaderView.h; sourceTree = "<group>"; };
+		9D9312D6206A26D100A3877B /* TY_ExampleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleHeaderView.m; sourceTree = "<group>"; };
+		9D9312D8206A303300A3877B /* TY_ExampleFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_ExampleFooterView.h; sourceTree = "<group>"; };
+		9D9312D9206A303300A3877B /* TY_ExampleFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleFooterView.m; sourceTree = "<group>"; };
 		9DB624AB20688F80007E7314 /* TestBaseViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBaseViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB624AE20688F80007E7314 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9DB624AF20688F80007E7314 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,10 +55,6 @@
 		9DB624BA20688F80007E7314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DB624BC20688F80007E7314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DB624BD20688F80007E7314 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9DB624C42068907C007E7314 /* TY_ExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_ExampleViewController.h; sourceTree = "<group>"; };
-		9DB624C52068907C007E7314 /* TY_ExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleViewController.m; sourceTree = "<group>"; };
-		9DB624C7206890DA007E7314 /* TY_BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_BaseViewController.h; sourceTree = "<group>"; };
-		9DB624C8206890DA007E7314 /* TY_BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_BaseViewController.m; sourceTree = "<group>"; };
 		9DB624CA20689A3E007E7314 /* UITableView+TY_TableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+TY_TableView.h"; sourceTree = "<group>"; };
 		9DB624CB20689A3E007E7314 /* UITableView+TY_TableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TY_TableView.m"; sourceTree = "<group>"; };
 		9DB624CD20689D62007E7314 /* TY_DataSourcce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_DataSourcce.h; sourceTree = "<group>"; };
@@ -48,14 +63,8 @@
 		9DB624D12068AA9B007E7314 /* TY_TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_TableViewCell.m; sourceTree = "<group>"; };
 		9DB624D32068C937007E7314 /* TY_TableViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_TableViewItem.h; sourceTree = "<group>"; };
 		9DB624D42068C937007E7314 /* TY_TableViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_TableViewItem.m; sourceTree = "<group>"; };
-		9DB624D62068D41C007E7314 /* TY_ExampleOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_ExampleOneCell.h; sourceTree = "<group>"; };
-		9DB624D72068D41C007E7314 /* TY_ExampleOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleOneCell.m; sourceTree = "<group>"; };
-		9DB624D92068D430007E7314 /* TY_ExampleTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_ExampleTwoCell.h; sourceTree = "<group>"; };
-		9DB624DA2068D430007E7314 /* TY_ExampleTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleTwoCell.m; sourceTree = "<group>"; };
 		9DB624DE2068D76E007E7314 /* TY_TableViewSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_TableViewSection.h; sourceTree = "<group>"; };
 		9DB624DF2068D76E007E7314 /* TY_TableViewSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_TableViewSection.m; sourceTree = "<group>"; };
-		9DB624E12068E468007E7314 /* TY_ExampleListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TY_ExampleListItem.h; sourceTree = "<group>"; };
-		9DB624E22068E468007E7314 /* TY_ExampleListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TY_ExampleListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +78,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D9312BD206A21DD00A3877B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D9312BE206A21DD00A3877B /* TY_ExampleOneCell.h */,
+				9D9312BF206A21DD00A3877B /* TY_ExampleOneCell.m */,
+				9D9312C0206A21DD00A3877B /* TY_ExampleTwoCell.h */,
+				9D9312C1206A21DD00A3877B /* TY_ExampleTwoCell.m */,
+				9D9312D5206A26D100A3877B /* TY_ExampleHeaderView.h */,
+				9D9312D6206A26D100A3877B /* TY_ExampleHeaderView.m */,
+				9D9312D8206A303300A3877B /* TY_ExampleFooterView.h */,
+				9D9312D9206A303300A3877B /* TY_ExampleFooterView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D9312C2206A21DD00A3877B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D9312C3206A21DD00A3877B /* TY_ExampleListItem.h */,
+				9D9312C4206A21DD00A3877B /* TY_ExampleListItem.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D9312C5206A21DE00A3877B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D9312C6206A21DE00A3877B /* TY_BaseViewController.h */,
+				9D9312C7206A21DE00A3877B /* TY_BaseViewController.m */,
+				9D9312C8206A21DE00A3877B /* TY_ExampleViewController.h */,
+				9D9312C9206A21DE00A3877B /* TY_ExampleViewController.m */,
+				9D9312CA206A21DE00A3877B /* TY_SecExampleViewController.h */,
+				9D9312CB206A21DE00A3877B /* TY_SecExampleViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		9DB624A220688F7F007E7314 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +154,8 @@
 				9DB624CB20689A3E007E7314 /* UITableView+TY_TableView.m */,
 				9DB624CD20689D62007E7314 /* TY_DataSourcce.h */,
 				9DB624CE20689D62007E7314 /* TY_DataSourcce.m */,
+				9D9312D2206A222800A3877B /* TY_HeaderFooterView.h */,
+				9D9312D3206A222800A3877B /* TY_HeaderFooterView.m */,
 				9DB624D02068AA9B007E7314 /* TY_TableViewCell.h */,
 				9DB624D12068AA9B007E7314 /* TY_TableViewCell.m */,
 				9DB624DE2068D76E007E7314 /* TY_TableViewSection.h */,
@@ -121,18 +169,9 @@
 		9DB624DD2068D68A007E7314 /* ExampleView */ = {
 			isa = PBXGroup;
 			children = (
-				9DB624C42068907C007E7314 /* TY_ExampleViewController.h */,
-				9DB624C52068907C007E7314 /* TY_ExampleViewController.m */,
-				9D9312B92069F5C300A3877B /* TY_SecExampleViewController.h */,
-				9D9312BA2069F5C300A3877B /* TY_SecExampleViewController.m */,
-				9DB624C7206890DA007E7314 /* TY_BaseViewController.h */,
-				9DB624C8206890DA007E7314 /* TY_BaseViewController.m */,
-				9DB624D62068D41C007E7314 /* TY_ExampleOneCell.h */,
-				9DB624D72068D41C007E7314 /* TY_ExampleOneCell.m */,
-				9DB624D92068D430007E7314 /* TY_ExampleTwoCell.h */,
-				9DB624DA2068D430007E7314 /* TY_ExampleTwoCell.m */,
-				9DB624E12068E468007E7314 /* TY_ExampleListItem.h */,
-				9DB624E22068E468007E7314 /* TY_ExampleListItem.m */,
+				9D9312C5206A21DE00A3877B /* Controllers */,
+				9D9312C2206A21DD00A3877B /* Models */,
+				9D9312BD206A21DD00A3877B /* Views */,
 			);
 			path = ExampleView;
 			sourceTree = "<group>";
@@ -209,18 +248,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D9312BB2069F5C300A3877B /* TY_SecExampleViewController.m in Sources */,
-				9DB624C62068907C007E7314 /* TY_ExampleViewController.m in Sources */,
-				9DB624D82068D41C007E7314 /* TY_ExampleOneCell.m in Sources */,
+				9D9312D0206A21DE00A3877B /* TY_ExampleViewController.m in Sources */,
+				9D9312CE206A21DE00A3877B /* TY_ExampleListItem.m in Sources */,
+				9D9312D1206A21DE00A3877B /* TY_SecExampleViewController.m in Sources */,
+				9D9312DA206A303300A3877B /* TY_ExampleFooterView.m in Sources */,
 				9DB624CF20689D62007E7314 /* TY_DataSourcce.m in Sources */,
 				9DB624BE20688F80007E7314 /* main.m in Sources */,
 				9DB624D22068AA9B007E7314 /* TY_TableViewCell.m in Sources */,
-				9DB624DB2068D430007E7314 /* TY_ExampleTwoCell.m in Sources */,
 				9DB624D52068C937007E7314 /* TY_TableViewItem.m in Sources */,
-				9DB624C9206890DA007E7314 /* TY_BaseViewController.m in Sources */,
+				9D9312CD206A21DE00A3877B /* TY_ExampleTwoCell.m in Sources */,
 				9DB624CC20689A3E007E7314 /* UITableView+TY_TableView.m in Sources */,
+				9D9312CF206A21DE00A3877B /* TY_BaseViewController.m in Sources */,
+				9D9312D7206A26D100A3877B /* TY_ExampleHeaderView.m in Sources */,
+				9D9312CC206A21DE00A3877B /* TY_ExampleOneCell.m in Sources */,
 				9DB624B020688F80007E7314 /* AppDelegate.m in Sources */,
-				9DB624E32068E468007E7314 /* TY_ExampleListItem.m in Sources */,
+				9D9312D4206A222800A3877B /* TY_HeaderFooterView.m in Sources */,
 				9DB624E02068D76E007E7314 /* TY_TableViewSection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

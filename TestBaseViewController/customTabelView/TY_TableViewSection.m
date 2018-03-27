@@ -12,6 +12,8 @@
 @interface TY_TableViewSection ()
 {
     Class _cellClass;
+    Class _headerClass;
+    Class _footerClass;
 }
 @end
 
@@ -24,6 +26,39 @@
     }
     return self;
 }
+
+- (instancetype)initWithCellClass:(Class)cellClass headerClass:(Class)headerClass
+{
+    if (self = [super init]) {
+        _cellClass = cellClass;
+        _headerClass = headerClass;
+        self.sectionHeaderIdentifier = NSStringFromClass(headerClass);
+    }
+    return self;
+}
+
+- (instancetype)initWithCellClass:(Class)cellClass footerClass:(Class)footerClass
+{
+    if (self = [super init]) {
+        _cellClass = cellClass;
+        _footerClass = footerClass;
+        self.sectionFooterIdentifier = NSStringFromClass(footerClass);
+    }
+    return self;
+    
+}
+- (instancetype)initWithCellClass:(Class)cellClass headerClass:(Class)headerClass footerClass:(Class)footerClass
+{
+    if (self = [super init]) {
+        _cellClass = cellClass;
+        _headerClass = headerClass;
+        _footerClass = footerClass;
+        self.sectionHeaderIdentifier = NSStringFromClass(headerClass);
+        self.sectionFooterIdentifier = NSStringFromClass(footerClass);
+    }
+    return self;
+}
+
 
 +(instancetype)sectionWithTitle:(NSString *)title andDataArr:(NSArray<TY_TableViewItem *> *)sectionArr
 {

@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 #import "TY_DataSourcce.h"
 #import "TY_TableViewCell.h"
+#import "TY_HeaderFooterView.h"
+#import "TY_TableViewSection.h"
 
 static char kSTDTableViewDataSourceIdentifyKey;
 static char kSTDTableViewControllerKey;
@@ -59,6 +61,12 @@ static char kSTDTableViewControllerKey;
     [self registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
 
+#pragma mark - 注册headerFooter
+- (void)ty_registerHeaderFooterClass:(Class)headerFooterClass
+{
+    [self registerClass:headerFooterClass forHeaderFooterViewReuseIdentifier:NSStringFromClass(headerFooterClass)];
+}
+
 #pragma mark - section 和 item 相关
 - (void)ty_addSection:(TY_TableViewSection *)section
 {
@@ -71,6 +79,38 @@ static char kSTDTableViewControllerKey;
     [self.ty_dataSource addItems:items atSection:section];
     [self reloadData];
 }
+
+#pragma mark - headerFooter相关
+- (UIView *)ty_viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *sectionArr = self.ty_dataSource.sections.copy;
+    TY_TableViewSection * tempSec = sectionArr[section];
+    TY_HeaderFooterView *headerView = [self dequeueReusableHeaderFooterViewWithIdentifier:tempSec.sectionHeaderIdentifier];
+    [headerView setupData:[NSString stringWithFormat:@"第%ld组", section]];
+    return headerView;
+}
+- (CGFloat)ty_heightForHeaderInSection:(NSInteger)section
+{
+    NSArray *sectionArr = self.ty_dataSource.sections.copy;
+    TY_TableViewSection * tempSec = sectionArr[section];
+    return tempSec.headerHeight;
+}
+
+- (UIView *)ty_viewForFooterInSection:(NSInteger)section
+{
+    NSArray *sectionArr = self.ty_dataSource.sections.copy;
+    TY_TableViewSection * tempSec = sectionArr[section];
+    TY_HeaderFooterView *headerView = [self dequeueReusableHeaderFooterViewWithIdentifier:tempSec.sectionFooterIdentifier];
+    [headerView setupData:[NSString stringWithFormat:@"第%ld组", section]];
+    return headerView;
+}
+- (CGFloat)ty_heightForFooterInSection:(NSInteger)section
+{
+    NSArray *sectionArr = self.ty_dataSource.sections.copy;
+    TY_TableViewSection * tempSec = sectionArr[section];
+    return tempSec.footerHeight;
+}
+
 
 #pragma mark - 点击响应
 - (void)ty_cellDidSelectedWithIndexPath:(NSIndexPath *)indexPath

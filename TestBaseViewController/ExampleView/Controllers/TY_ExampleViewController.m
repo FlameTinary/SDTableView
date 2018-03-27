@@ -13,6 +13,9 @@
 #import "TY_ExampleListItem.h"
 #import "TY_SecExampleViewController.h"
 
+#import "TY_ExampleHeaderView.h"
+#import "TY_ExampleFooterView.h"
+
 @interface TY_ExampleViewController ()
 //item数组
 @property (nonatomic, strong) NSArray *itemArr;
@@ -48,22 +51,57 @@
 - (void)configTableView:(UITableView *)tableView
 {
     tableView.rowHeight = 55;
-    
     // 注册cell
     [tableView ty_registerCellClass:[TY_ExampleOneCell class]];
+    [tableView ty_registerCellClass:[TY_ExampleTwoCell class]];
     
-    // 添加一个section
-    TY_TableViewSection * section = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleOneCell class]];
-    [tableView ty_addSection:section];
-    
+    [tableView ty_registerHeaderFooterClass:[TY_ExampleHeaderView class]];
+    [tableView ty_registerHeaderFooterClass:[TY_ExampleFooterView class]];
 }
 
 - (void)setupExampleContent
 {
+    // 添加section0
+    TY_TableViewSection * section0 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleOneCell class] headerClass:[TY_ExampleHeaderView class]];
+    section0.headerHeight = 44;
+    [self.tableView ty_addSection:section0];
     [self.tableView ty_addItems:self.itemArr atSection:0];
+    
+    // 添加section1
+    TY_TableViewSection * section1 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleTwoCell class] headerClass:[TY_ExampleHeaderView class]];
+    section1.headerHeight = 44;
+    [self.tableView ty_addSection:section1];
+    [self.tableView ty_addItems:self.itemArr atSection:1];
+    
+    // 添加section2
+    TY_TableViewSection * section2 = [[TY_TableViewSection alloc] initWithCellClass:[TY_ExampleTwoCell class] headerClass:[TY_ExampleHeaderView class] footerClass:[TY_ExampleFooterView class]];
+    section2.headerHeight = 44;
+    section2.footerHeight = 66;
+    [self.tableView ty_addSection:section2];
+    [self.tableView ty_addItems:self.itemArr atSection:2];
+
 }
 
 #pragma mark - UITableViewDelegate
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [self.tableView ty_viewForHeaderInSection:section];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return [self.tableView ty_heightForHeaderInSection:section];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [self.tableView ty_viewForFooterInSection:section];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return [self.tableView ty_heightForFooterInSection:section];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView ty_cellDidSelectedWithIndexPath:indexPath];

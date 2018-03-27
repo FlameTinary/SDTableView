@@ -22,9 +22,20 @@
 #pragma mark - 注册cell
 - (void)ty_registerCellClass:(Class)cellClass;
 
+#pragma mark - 注册headerFooter
+- (void)ty_registerHeaderFooterClass:(Class)headerFooterClass;
+
 #pragma mark - section 和 item 相关
 - (void)ty_addSection:(TY_TableViewSection *)section;
 - (void)ty_addItems:(NSArray *)items atSection:(NSInteger)section;
+
+#pragma mark - headerFooter相关
+- (UIView *)ty_viewForHeaderInSection:(NSInteger)section;
+- (CGFloat)ty_heightForHeaderInSection:(NSInteger)section;
+
+- (UIView *)ty_viewForFooterInSection:(NSInteger)section;
+- (CGFloat)ty_heightForFooterInSection:(NSInteger)section;
+
 
 #pragma mark - 点击响应
 - (void)ty_cellDidSelectedWithIndexPath:(NSIndexPath *)indexPath;
