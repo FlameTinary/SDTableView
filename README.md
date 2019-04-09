@@ -1,4 +1,4 @@
-# TYTableView（请勿使用）
+# TYTableView
 ## 一、简介
 封装的tableView，减少控制器中tableView相关的代码
 ## 二、TY_TableView分类中的API
